@@ -185,6 +185,16 @@
     .reel-card {
         max-width: 500px;
         margin: 0 auto;
+        width: 100%;
+    }
+    
+    .reel-embed {
+        min-height: 600px;
+    }
+    
+    .reel-embed iframe {
+        display: block;
+        visibility: visible;
     }
     
     /* Filter Buttons */
@@ -386,6 +396,18 @@
     /* Reels Section */
     .reel-card {
         max-width: 100%;
+        width: 100%;
+    }
+    
+    .reel-embed {
+        min-height: 550px;
+        padding-top: 177.78%;
+    }
+    
+    .reel-embed iframe {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .play-overlay i {

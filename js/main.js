@@ -350,6 +350,32 @@
     }).on('mouseleave', function() {
         $(this).find('.play-overlay i').removeClass('animate-pulse');
     });
+    
+    // Force Instagram embeds to load on mobile
+    function ensureReelsVisible() {
+        if ($(window).width() <= 767) {
+            $('.reel-embed iframe').each(function() {
+                const $iframe = $(this);
+                // Force iframe visibility on mobile
+                $iframe.css({
+                    'display': 'block',
+                    'visibility': 'visible',
+                    'opacity': '1',
+                    'min-height': '550px'
+                });
+                
+                // Reload iframe src to ensure it loads
+                const src = $iframe.attr('src');
+                if (src) {
+                    $iframe.attr('src', src);
+                }
+            });
+        }
+    }
+    
+    // Run on load and resize
+    ensureReelsVisible();
+    $(window).on('resize', debounce(ensureReelsVisible, 300));
 
     // ============================================
     // INSTAGRAM FEED HOVER EFFECT

@@ -716,15 +716,18 @@ ul {
     padding-top: 177.78%; /* 9:16 aspect ratio */
     overflow: hidden;
     background: linear-gradient(135deg, var(--light-gray), var(--primary-light));
+    width: 100%;
 }
 
 .reel-embed iframe {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
     border: none;
+    display: block;
+    max-width: 100%;
 }
 
 .reel-link {
